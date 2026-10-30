@@ -1,0 +1,111 @@
+:root{
+  --oto-photo-portrait:url("https://images.pexels.com/photos/8000587/pexels-photo-8000587.jpeg?auto=compress&cs=tinysrgb&w=1600");
+  --oto-photo-lifestyle:url("https://images.pexels.com/photos/4219751/pexels-photo-4219751.jpeg?auto=compress&cs=tinysrgb&w=1600");
+}
+
+.hero-art{
+  position:relative;
+  overflow:hidden;
+  background:#b7b1ab;
+}
+.hero-art::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image:var(--oto-photo-portrait);
+  background-size:cover;
+  background-position:center 22%;
+  filter:saturate(1.05) contrast(1.03);
+  opacity:.96;
+}
+.hero-art::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,rgba(30,15,11,.03),rgba(30,15,11,.20));
+}
+.hero-art>*{position:relative;z-index:2}
+.hero-hp,.hero-orbit{display:none}
+.float-sticker{
+  background:#fff;
+  color:#1e0f0b;
+  box-shadow:0 16px 40px rgba(30,15,11,.18);
+}
+
+.story-visual{
+  position:relative;
+  overflow:hidden;
+}
+.story-visual::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image:var(--oto-photo-lifestyle);
+  background-size:cover;
+  background-position:center 30%;
+  filter:saturate(1.08);
+}
+.story-visual::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,rgba(91,42,102,.08),rgba(30,15,11,.36));
+}
+.story-visual>*{position:relative;z-index:2}
+.story-sun,.story-block{display:none}
+.story-circle{
+  background:rgba(232,237,146,.88);
+  color:#1e0f0b;
+  backdrop-filter:blur(8px);
+}
+.story-stamp{
+  background:#1e0f0b;
+  color:#fff;
+}
+
+.moment-art{
+  position:relative;
+  overflow:hidden;
+  min-height:360px;
+  background:#d7d0ca;
+}
+.moment-art::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-size:cover;
+  background-position:center;
+  transform:scale(1.02);
+  transition:transform .45s ease;
+}
+.moment:hover .moment-art::before{transform:scale(1.08)}
+.moment .silhouette{display:none}
+.m1 .moment-art::before{
+  background-image:var(--oto-photo-lifestyle);
+  background-position:center 32%;
+}
+.m2 .moment-art::before{
+  background-image:var(--oto-photo-portrait);
+  background-position:center 28%;
+}
+.m3 .moment-art::before{
+  background-image:var(--oto-photo-lifestyle);
+  background-position:center 18%;
+}
+.moment-art::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,rgba(30,15,11,.01),rgba(30,15,11,.34));
+}
+.moment-bottom{
+  position:relative;
+  z-index:2;
+  background:#fff;
+}
+
+@media(max-width:650px){
+  .hero-art::before{background-position:center 18%}
+  .moment-art{min-height:300px}
+  .story-visual::before{background-position:center 25%}
+}
